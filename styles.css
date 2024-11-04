@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    gap: 5px;
+    margin: 20px auto;
+    width: 300px;
+    height: 300px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-color: #607d8b;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+}
+
+.cell-start {
+    background-color: #4caf50;
+    color: #fff;
+} /* Verde per Start */
+
+.cell-end {
+    background-color: #f44336;
+    color: #fff;
+} /* Rosso per End */
+
+.cell-bonus, .cell-penalty {
+    color: transparent; /* Simboli invisibili all'inizio */
+}
+
+.cell-bonus.active { color: #4caf50; } /* Bonus attivato, simbolo + visibile */
+.cell-penalty.active { color: #f44336; } /* Penalità attivata, simbolo - visibile */
+
+.cell-visited { background-color: #8bc34a; } /* Traccia percorso in verde chiaro */
+.cell-locked { cursor: not-allowed; } /* Blocco celle non adiacenti */
